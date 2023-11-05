@@ -17,6 +17,8 @@ void printVector (vector_t *vector);
 // um vetor e composto por 2 pontos no plano.
 int main(){
 	vector_t *AB;
+	//cordenas caso tenha um vetor R2 deixe coloque assim {3,-4, 0}, caso tenha as 3 cordenadas {1,4,1}
+	//		 I, J, K
 	double crd[3] = {3,-4, 0};
 	AB = defineVector(crd);
 	printVector(AB);
