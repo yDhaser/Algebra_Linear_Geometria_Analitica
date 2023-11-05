@@ -14,6 +14,7 @@ void getModule(vector_t *vector);
 void getInversor(vector_t *vector);
 vector_t *defineVector(double *cord);
 void printVector (vector_t *vector);
+void freeStruct(vector_t *vector);
 // um vetor e composto por 2 pontos no plano.
 int main(){
 	vector_t *AB;
@@ -22,6 +23,8 @@ int main(){
 	double crd[3] = {3,-4, 0};
 	AB = defineVector(crd);
 	printVector(AB);
+	
+	freeStruct(AB);
 	return 0;
 }
 
@@ -53,4 +56,10 @@ void getInversor(vector_t *vector){
 }
 void getModule(vector_t *vector){
 	vector->module = sqrt(pow(vector->vec[0],2) + pow(vector->vec[1],2) + pow(vector->vec[2],2));
+}
+
+void freeStruct(vector_t *vector){
+	free(vector->inv_vector);
+	free(vector->vec);
+	free(vector);
 }
